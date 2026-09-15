@@ -103,8 +103,7 @@
 
 @layer base {
   html {
-    /* overflow-x: hidden is more compatible than clip on older Safari/iOS */
-    overflow-x: hidden;
+    overflow-x: clip;
     scroll-behavior: auto;
     -webkit-text-size-adjust: 100%;
     /* Prevent horizontal drag exposing empty space on mobile */
@@ -119,9 +118,8 @@
 
   /* Coarse pointer / touch must always use native auto scroll physics to avoid rubber-banding/lag */
   @media (pointer: coarse) {
-    html, body {
+    html {
       scroll-behavior: auto !important;
-      -webkit-overflow-scrolling: touch;
     }
   }
 
@@ -132,10 +130,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    /* Do NOT set overscroll-behavior-y: none here — it fights iOS momentum
-       scroll and is the second most common cause of "stuck" mobile scroll.
-       Lenis handles overscroll on desktop; native handles it on mobile. */
-    overflow-x: hidden;
+    min-height: 100%;
   }
 
   ::selection {
@@ -155,11 +150,9 @@
 }
 
 @layer components {
-  /* Rendering performance: content-visibility allows offscreen sections to skip
-     layout and rendering costs until near the viewport */
+  /* content-visibility is set to visible to avoid layout thrashing and scroll jumps on mobile */
   .content-auto {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 800px;
+    content-visibility: visible;
   }
 
   /* ===========================================================================
@@ -247,6 +240,21 @@
     background:
       radial-gradient(115% 88% at 50% 45%, transparent 52%, rgba(70, 62, 48, 0.10) 100%);
     mix-blend-mode: multiply;
+  }
+
+  /* On touch / coarse pointer devices, bypass expensive multi-layer readback blending
+     and rotation transforms on the paper sheet, keeping 120 FPS compositor scrolling. */
+  @media (pointer: coarse), (max-width: 768px) {
+    .paper-grid {
+      transform: none !important;
+      mask-image: none !important;
+      -webkit-mask-image: none !important;
+    }
+    .paper-crumple,
+    .paper-fibre,
+    .paper-edge-shade {
+      mix-blend-mode: normal !important;
+    }
   }
 
   /* Everything that is actual content sits above the texture stack. */
@@ -912,10 +920,8 @@
   top: 0;
   z-index: 40;
   height: var(--mobile-nav-h);
-  background: rgba(243, 241, 235, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(18, 18, 17, 0.1);
+  background: rgba(243, 241, 235, 0.98);
+  border-bottom: 1px solid rgba(18, 18, 17, 0.12);
   box-shadow: 0 1px 4px rgba(18, 18, 17, 0.06);
 }
 
@@ -1067,12 +1073,14 @@
   z-index: 49;
   background: rgba(18, 18, 17, 0);
   pointer-events: none;
-  transition: background 0.28s ease;
+  visibility: hidden;
+  transition: background 0.28s ease, visibility 0.28s ease;
 }
 
 .mobile-nav-backdrop--open {
   background: rgba(18, 18, 17, 0.42);
   pointer-events: auto;
+  visibility: visible;
 }
 
 /* ─── Slide-over drawer ─── */
@@ -1092,12 +1100,16 @@
   overflow-x: hidden;
   overscroll-behavior: contain;
   transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
   will-change: transform;
 }
 
 .mobile-nav-drawer--open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav-drawer__header {
@@ -1248,5 +1260,3 @@
   color: rgba(18, 18, 17, 0.45);
   letter-spacing: 0.06em;
 }
-
-

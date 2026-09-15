@@ -29,7 +29,7 @@ export default function PaperRun({ children }: { children: React.ReactNode }) {
   usePointerVector()
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative overflow-x-clip">
       {/* Oversized, so the drift never exposes an edge.
           willChange is only applied on devices with a fine pointer
           (mouse/trackpad) where the parallax actually runs. */}

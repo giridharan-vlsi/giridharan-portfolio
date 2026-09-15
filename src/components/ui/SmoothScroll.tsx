@@ -18,10 +18,13 @@ export default function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    // Touch-only devices (phones/tablets) scroll better natively.
-    // `pointer: fine` is a mouse or stylus — coarse means touchscreen.
-    const hasFinePonter = window.matchMedia('(pointer: fine)').matches
-    if (!hasFinePonter) return
+    // Touch/mobile devices must ALWAYS use native browser scrolling.
+    // Lenis is strictly reserved for fine-pointer desktop devices (mouse / trackpad).
+    const isTouch =
+      window.matchMedia('(pointer: coarse)').matches ||
+      !window.matchMedia('(pointer: fine)').matches ||
+      ('ontouchstart' in window && navigator.maxTouchPoints > 0)
+    if (isTouch) return
 
     const lenis = new Lenis({
       lerp: 0.1,           // Smoother than duration+easing, prevents jank on wheel

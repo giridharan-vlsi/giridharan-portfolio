@@ -2,19 +2,18 @@ import type { Metadata, Viewport } from 'next'
 import { site } from '@/config/site'
 import SmoothScroll from '@/components/ui/SmoothScroll'
 import Cursor from '@/components/ui/Cursor'
-import MobileNav from '@/components/ui/MobileNav'
+import NavigationBar from '@/components/navigation/NavigationBar'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: `${site.firstName} ${site.lastName} | VLSI & Semiconductor Engineering Portfolio`,
-  description: 'GIRIDHARAN S — B.E. student focused on digital design, VLSI implementation and semiconductor technologies.',
+  title: `${site.firstName} ${site.lastName} | VLSI Engineer · RTL Design · Physical Design · DFT`,
+  description: `${site.firstName} ${site.lastName} — VLSI Engineer with hands-on RTL-to-OASIS/GDSII implementation, Synopsys Fusion Compiler, VCS/Verdi verification, and Tessent DFT expertise. Seeking semiconductor engineering internship opportunities.`,
   openGraph: {
-    title: `${site.firstName} ${site.lastName} — VLSI Portfolio ${site.year}`,
-    description: 'Designing hardware from RTL to Silicon.',
+    title: `${site.firstName} ${site.lastName} — VLSI Engineering Portfolio ${site.year}`,
+    description: 'Hardware architecture from Verilog RTL to Silicon OASIS Layout.',
     type: 'website',
   },
 }
-
 
 export const viewport: Viewport = {
   themeColor: '#f3f1eb',
@@ -36,9 +35,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <SmoothScroll />
         <Cursor />
-        <MobileNav />
+        <NavigationBar />
         <a
-          href="#intro"
+          href="#about"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
         >
           Skip to content

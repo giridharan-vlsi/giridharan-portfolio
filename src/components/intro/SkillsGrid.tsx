@@ -15,7 +15,7 @@ export default function SkillsGrid() {
       y: 0,
       transition: reduced
         ? { duration: 0 }
-        : { duration: 0.6, delay: 0.35 + i * 0.08, ease: ease.paper },
+        : { duration: 0.6, delay: 0.2 + i * 0.06, ease: ease.paper },
     }),
   }
 
@@ -33,7 +33,7 @@ export default function SkillsGrid() {
         >
           {site.skills.heading}
         </p>
-        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
+        <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
           {site.skills.items.map((tool) => (
             <div
               key={tool.label}
@@ -45,15 +45,15 @@ export default function SkillsGrid() {
                 <img
                   src={tool.src}
                   alt={tool.label}
-                  className="h-8 w-8 object-contain transition-transform duration-200 group-hover:scale-105"
+                  className="h-7 w-7 object-contain transition-transform duration-200 group-hover:scale-105"
                   loading="lazy"
                 />
               ) : (
-                <span className="flex h-8 w-8 items-center justify-center rounded bg-ink font-mono text-[0.65rem] font-bold text-paper">
+                <span className="flex h-7 w-7 items-center justify-center rounded bg-ink font-mono text-[0.65rem] font-bold text-paper">
                   {tool.short}
                 </span>
               )}
-              <span className="font-mono text-[0.6rem] font-medium leading-tight text-ink line-clamp-1">
+              <span className="font-mono text-[0.58rem] font-medium leading-tight text-ink line-clamp-1">
                 {tool.label}
               </span>
             </div>
@@ -62,26 +62,29 @@ export default function SkillsGrid() {
       </motion.div>
 
       {/* Categorized Technical Skills */}
-      {site.techStack.categories.map((cat, i) => (
+      {site.techSkills.categories.map((cat, i) => (
         <motion.div
           key={cat.title}
           variants={cardVariant}
           custom={i + 1}
           className="rounded-[0.4rem] border border-ink/15 bg-paper/85 md:bg-paper/60 p-[0.75rem] md:backdrop-blur-[2px] transition-colors duration-300 hover:border-ink/35"
         >
-          <p
-            className="eyebrow m-0 mb-[0.45rem] font-bold text-ink"
-            style={{ fontSize: 'clamp(0.6875rem, 0.9vw, 0.78rem)', letterSpacing: '0.12em' }}
-          >
-            {cat.title}
-          </p>
+          <div className="flex items-center justify-between mb-[0.45rem]">
+            <p
+              className="eyebrow m-0 font-bold text-ink"
+              style={{ fontSize: 'clamp(0.6875rem, 0.9vw, 0.78rem)', letterSpacing: '0.12em' }}
+            >
+              {cat.title}
+            </p>
+          </div>
           <div className="flex flex-wrap gap-1.5 sm:gap-[0.35rem]">
             {cat.skills.map((skill) => (
               <span
-                key={skill}
-                className="inline-block max-w-full break-words rounded-[3px] border border-ink/10 bg-white/85 px-2 py-1 sm:px-[0.45rem] sm:py-[0.15rem] font-mono text-[0.72rem] sm:text-[clamp(0.6875rem,0.85vw,0.75rem)] font-medium text-ink transition-transform duration-200 hover:-translate-y-[1px] hover:border-signal/40"
+                key={skill.name}
+                className="inline-flex items-center gap-1 rounded-[3px] border border-ink/10 bg-white/85 px-2 py-0.8 font-mono text-[0.7rem] font-medium text-ink transition-transform duration-200 hover:-translate-y-[1px] hover:border-signal/40"
               >
-                {skill}
+                <span>{skill.name}</span>
+                <span className="text-[0.58rem] text-graphite">({skill.level})</span>
               </span>
             ))}
           </div>
@@ -90,4 +93,3 @@ export default function SkillsGrid() {
     </div>
   )
 }
-

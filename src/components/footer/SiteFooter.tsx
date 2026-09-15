@@ -7,7 +7,6 @@ import { ease, viewportOnce } from '@/lib/motion'
 import { usePrefersReducedMotion } from '@/lib/hooks'
 import TornEdge from '@/components/paper/TornEdge'
 import ConnectCTA from './ConnectCTA'
-import ContactForm from './ContactForm'
 
 /** Slower than the poster's marquee — this one is weather, not a headline. */
 const DRIFT = '58s'
@@ -127,11 +126,6 @@ export default function SiteFooter() {
         </motion.div>
       </div>
 
-      {/* Contact form — reachable via the #send-message anchor */}
-      <div className="relative z-10 mx-auto max-w-[112rem] px-[max(1.5rem,7vw)] pb-[clamp(3rem,8vw,6rem)]">
-        <ContactForm />
-      </div>
-
       {/* The page physically ends. */}
       <TornEdge side="top" seed={73} roughness={0.76} />
       <div className="on-noir bg-noir px-[max(1.5rem,7vw)] pb-[clamp(1.75rem,4vw,3rem)] pt-[clamp(0.5rem,1.5vw,1rem)]">
@@ -201,31 +195,32 @@ function Signature() {
 function SocialRow() {
   return (
     <ul className="m-0 flex list-none flex-wrap items-center gap-[clamp(1rem,2.4vw,2rem)] p-0">
-      {site.footer.links.map((link) => {
-        const external = !!link.href && /^https?:/i.test(link.href)
+      {site.footer.links.map((link: { label: string; href?: string | null }) => {
+        const hasHref = typeof link.href === 'string' && link.href.length > 0
+        const external = hasHref && /^https?:/i.test(link.href!)
         return (
-        <li key={link.label}>
-          {link.href ? (
-            <a
-              href={link.href}
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noopener noreferrer' : undefined}
-              className="eyebrow group/link inline-flex items-center gap-[0.5em] text-ink transition-colors duration-300 hover:text-signal"
-              style={{ fontSize: 'clamp(0.6875rem,1vw,0.8125rem)', letterSpacing: '0.14em' }}
-            >
-              {link.label}
-              <span className="block h-px w-[0.9em] bg-current transition-transform duration-300 group-hover/link:translate-x-[3px]" />
-            </a>
-          ) : (
-            <span
-              className="eyebrow text-ink/35"
-              style={{ fontSize: 'clamp(0.6875rem,1vw,0.8125rem)', letterSpacing: '0.14em' }}
-              title="Link to be supplied"
-            >
-              {link.label}
-            </span>
-          )}
-        </li>
+          <li key={link.label}>
+            {hasHref ? (
+              <a
+                href={link.href!}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
+                className="eyebrow group/link inline-flex items-center gap-[0.5em] text-ink transition-colors duration-300 hover:text-signal"
+                style={{ fontSize: 'clamp(0.6875rem,1vw,0.8125rem)', letterSpacing: '0.14em' }}
+              >
+                {link.label}
+                <span className="block h-px w-[0.9em] bg-current transition-transform duration-300 group-hover/link:translate-x-[3px]" />
+              </a>
+            ) : (
+              <span
+                className="eyebrow text-ink/35"
+                style={{ fontSize: 'clamp(0.6875rem,1vw,0.8125rem)', letterSpacing: '0.14em' }}
+                title="Link to be supplied"
+              >
+                {link.label}
+              </span>
+            )}
+          </li>
         )
       })}
     </ul>

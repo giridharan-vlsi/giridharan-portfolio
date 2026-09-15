@@ -17,3 +17,6 @@ reference/studio-section.jpg
 
 .vercel
 .env*
+
+# Local working / staging folders - not portfolio content
+public/assets/_classify_temp/
