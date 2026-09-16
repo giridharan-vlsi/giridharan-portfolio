@@ -28,7 +28,7 @@ export const site = {
   internshipStatement:
     'Seeking opportunities to contribute to VLSI and semiconductor engineering teams through internship roles across RTL Design, Physical Design, DFT, Verification, and related domains.',
 
-  resumeUrl: '/resume/Giridharan_S_VLSI_Resume.pdf',
+  resumeUrl: '/resume/Giridharan_S_VLSI_Resume_v2.pdf',
   githubUrl: 'https://github.com/giridharansenthil416-png',
   linkedinUrl: 'https://www.linkedin.com/in/giridharan-s-13672932b/',
   contactEmail: 'giridharansenthil416@gmail.com',
@@ -571,7 +571,7 @@ export const site = {
     href: 'mailto:giridharansenthil416@gmail.com',
     marquee: ['GIRIDHARAN S', 'VLSI ENGINEER', 'RTL TO OASIS', 'PHYSICAL DESIGN', 'SYNTHESIS & CTS'],
     links: [
-      { label: 'Resume ↓', href: '/assets/Giridharan_S_Resume.pdf' },
+      { label: 'Resume ↓', href: '/resume/Giridharan_S_VLSI_Resume_v2.pdf' },
       { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/giridharan-s-13672932b/' },
       { label: 'GitHub ↗', href: 'https://github.com/giridharansenthil416-png' },
       { label: 'Email', href: 'mailto:giridharansenthil416@gmail.com' },
