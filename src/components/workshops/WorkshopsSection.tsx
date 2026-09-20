@@ -121,7 +121,7 @@ export default function WorkshopsSection() {
                 </div>
 
                 <div className="mt-6 border-t border-ink/10 pt-4">
-                  {item.certificate ? (
+                  {'certificate' in item && item.certificate ? (
                     'pdfUrl' in item.certificate ? (
                       <a
                         href={(item.certificate as { pdfUrl: string; title: string; alt: string }).pdfUrl}

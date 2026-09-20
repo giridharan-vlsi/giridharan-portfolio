@@ -28,7 +28,7 @@ export const site = {
   internshipStatement:
     'Seeking opportunities to contribute to VLSI and semiconductor engineering teams through internship roles across RTL Design, Physical Design, DFT, Verification, and related domains.',
 
-  resumeUrl: '/resume/Giridharan_S_VLSI_Resume_v2.pdf',
+  resumeUrl: '/resume/Giridharan_S_VLSI_Resume_v3.pdf',
   githubUrl: 'https://github.com/giridharansenthil416-png',
   linkedinUrl: 'https://www.linkedin.com/in/giridharan-s-13672932b/',
   contactEmail: 'giridharansenthil416@gmail.com',
@@ -46,9 +46,9 @@ export const site = {
 
   /** Engineering Snapshot Data */
   snapshot: [
-    { label: 'DEGREE', value: 'B.Tech — VLSI Design & Tech' },
-    { label: 'ACADEMICS', value: '8.00 CGPA' },
-    { label: 'PRIMARY FOCUS', value: 'Physical Design' },
+    { label: 'DEGREE', value: 'B.E — VLSI Design & Tech' },
+    { label: 'ACADEMICS', value: '8.00 / 10 CGPA' },
+    { label: 'PRIMARY FOCUS', value: 'Physical Design & DFT' },
     { label: 'IMPLEMENTATION', value: 'RTL → OASIS Hands-on' },
     { label: 'EDA TOOLCHAIN', value: 'Synopsys + Cadence' },
     { label: 'DFT / TEST', value: 'Siemens Tessent (Hands-on)' },
@@ -60,26 +60,26 @@ export const site = {
   intro: {
     heading: 'ABOUT ME',
     lede: "Hi, I'm GIRIDHARAN S.",
-    roleBadge: 'VLSI Engineer & Engineering Student',
+    roleBadge: '3rd-Year Electronics Engineering (VLSI) Student',
     paragraphs: [
-      'I am an Electronics Engineering student specializing in VLSI Design and Technology at Rajalakshmi Institute of Technology, Chennai (CGPA: 8.00), building hands-on competencies across digital logic, RTL design, ASIC verification, and physical implementation.',
+      '3rd-year Electronics Engineering (VLSI) student with hands-on experience in DFT, RTL design, Physical Design, and CMOS VLSI using industry-standard EDA tools. Skilled in Verilog, Siemens Tessent, VCS, Verdi, and Fusion Compiler, with practical exposure to RTL-to-OASIS implementation and RISC-V.',
       'My primary career interest is Physical Design — taking logic from RTL through synthesis, floorplanning, power grid generation, placement, clock tree synthesis (CTS), routing, and layout generation. I have hands-on experience driving designs to OASIS format using Synopsys Fusion Compiler.',
-      'Alongside physical design, I have independently worked through hands-on DFT exploration with Siemens Tessent, transistor-level custom IC design in Synopsys Custom Compiler and Cadence Virtuoso, and FPGA bitstream deployment on Altera Cyclone II hardware.',
-      'I am actively seeking internship opportunities across RTL Design, Physical Design, DFT, and Verification to contribute to high-impact semiconductor teams.',
+      'Alongside physical design, I have independently worked through hands-on DFT operations with Siemens Tessent, transistor-level custom IC design in Synopsys Custom Compiler and Cadence Virtuoso, and FPGA bitstream deployment on Altera Cyclone II hardware.',
+      'Seeking a semiconductor internship to apply my skills, learn from industry professionals, and contribute to real-world silicon development.',
     ],
     terminal: {
       identity: 'GIRIDHARAN S',
       domain: 'VLSI & SEMICONDUCTOR ENGINEERING',
-      degree: 'B.Tech — VLSI Design and Technology (2024–2028)',
+      degree: 'B.E — Electronics Engineering (VLSI Design & Technology)',
       institution: 'Rajalakshmi Institute of Technology, Chennai',
-      cgpa: '8.00 CGPA',
-      primaryFocus: 'Physical Design (RTL-to-GDSII / OASIS)',
-      goal: 'VLSI / Semiconductor Engineering Internship',
+      cgpa: '8.00 / 10 CGPA',
+      primaryFocus: 'Physical Design & DFT (RTL-to-OASIS / Tessent)',
+      goal: 'Semiconductor Engineering Internship',
     },
     languages: ['English (Professional)', 'Tamil (Native)'],
     stats: [
       { value: '8.00', label: 'CGPA' },
-      { value: '2028', label: 'GRADUATION' },
+      { value: '2024–2028', label: 'BATCH' },
       { value: 'RTL→OASIS', label: 'IMPLEMENTATION' },
     ],
   },
@@ -278,29 +278,28 @@ export const site = {
         id: 'tessent-dft',
         category: 'DFT / TEST',
         title: 'Siemens Tessent — Hands-on DFT Assignment',
-        type: 'HOD-Assigned Technical Task',
-        badge: 'HANDS-ON / LEARNING',
-        organization: 'Rajalakshmi Institute of Technology',
+        type: 'Hands-on DFT Assignment',
+        badge: 'JUL 2026 – PRESENT',
+        organization: 'Rajalakshmi Institute of Technology, Chennai',
         description:
-          'HOD-assigned technical task focused on Siemens Tessent. Independently worked through the tool setup process, including download, installation, environment configuration, and practical exploration of the Tessent DFT flow.',
+          'Independently set up Siemens Tessent in a Linux environment, including installation, environment configuration, Tessent Shell setup, and design setup. Performed hands-on DFT operations involving scan and scan-chain concepts and ATPG-related workflows, developing practical understanding of the Tessent DFT flow.',
         coverage: [
-          'Tool installation, licensing and environment configuration on Linux workstation',
-          'Tessent Shell navigation and design setup/import procedures',
-          'Scan insertion, scan chain configuration, and boundary scan concepts',
-          'ATPG (Automatic Test Pattern Generation) flow exploration',
-          'DFT rule violation debugging and test coverage report viewing',
+          'Independently set up Siemens Tessent in Linux, including installation, environment configuration, and design setup',
+          'Performed hands-on DFT operations involving scan and scan-chain concepts and ATPG-related workflows',
+          'Debugged tool, environment, and design-setup issues while working through DFT operations',
+          'Developed practical hands-on understanding of the Siemens Tessent DFT methodology',
         ],
-        tags: ['Siemens Tessent', 'DFT', 'Scan Chains', 'ATPG', 'Tessent Shell', 'Testing'],
+        tags: ['Siemens Tessent', 'DFT', 'Scan Chains', 'ATPG Workflows', 'Tessent Shell', 'Linux'],
       },
       {
         id: 'custom-vlsi',
         category: 'CUSTOM IC DESIGN',
-        title: 'Custom VLSI & Digital Circuit Design Experience',
+        title: 'Custom CMOS VLSI Design & Layout',
         type: 'Transistor-Level Lab Exploration',
-        badge: 'INTERMEDIATE / HANDS-ON',
+        badge: 'ACADEMIC / HANDS-ON',
         organization: 'VLSI Engineering Lab',
         description:
-          'Transistor-level CMOS circuit schematic design, simulation, symbol generation, and full-custom physical layout using industry-standard tools.',
+          'Designed transistor-level CMOS schematics and layouts using Synopsys Custom Compiler and Cadence Virtuoso. Worked on latches, flip-flops, shift registers, counters, SRAM, register files, adders, and multipliers, including DRC, LVS, and PEX verification.',
         tools: ['Synopsys Custom Compiler', 'Cadence Virtuoso'],
         coverage: [
           'CMOS Logic: Inverters, NAND, NOR, XOR, XNOR and complex gates',
@@ -342,17 +341,17 @@ export const site = {
     items: [
       {
         num: '01',
-        period: 'Virtual Internship 6.0',
-        role: 'Python & Programming Track',
+        period: 'Nov 2025 – Jan 2026',
+        role: 'Technical Intern – Python',
         company: 'Infosys Springboard',
-        badge: 'PYTHON',
-        duration: 'Virtual Practicum (Batch 7)',
-        mode: 'Virtual / Online',
-        status: 'Selected & Verified',
-        commenced: 'November 2025',
+        badge: 'PYTHON INTERN',
+        duration: '2-Month Virtual Internship',
+        mode: 'Remote',
+        status: 'Completed & Verified',
+        commenced: 'Nov 2025 – Jan 2026',
         description:
-          'Selected and enrolled in the Infosys Springboard Virtual Internship 6.0 (Batch 7) focusing on core programming foundations, software architecture concepts, and engineering problem-solving.',
-        tags: ['Python', 'Software Engineering', 'Virtual Practicum', 'Infosys Springboard'],
+          'Completed a 2-month virtual internship focused on applied Python, delivering project-based solutions and hands-on exercises while applying OOP, data structures, and file I/O concepts. Developed Python scripts for task automation and data processing, using systematic testing and debugging to improve code reliability and problem-solving skills. Completed coding challenges and real-world exercises, documented solutions, and presented work to mentors to strengthen technical communication and software development practices.',
+        tags: ['Python', 'Automation', 'OOP & Data Structures', 'Infosys Springboard'],
         credentials: [
           {
             src: '/assets/internships/infosys/infosys_selection_letter.jpg',
@@ -478,6 +477,18 @@ export const site = {
           alt: 'Synopsys Technical Workshop Certificate from CIT for Giridharan S',
         },
       },
+      {
+        id: 'maven-silicon-soc',
+        num: '04',
+        title: 'VLSI System-on-Chip (SoC) Course',
+        organizer: 'Maven Silicon',
+        date: '2026',
+        category: 'VLSI & SOC DESIGN',
+        description:
+          'Specialized training covering VLSI System-on-Chip (SoC) architecture, design flow, and semiconductor engineering methodologies.',
+        tags: ['Maven Silicon', 'VLSI SoC', 'System-on-Chip', 'Course'],
+        certificate: null,
+      },
     ],
   },
 
@@ -486,13 +497,13 @@ export const site = {
     heading: 'EDUCATION',
     items: [
       {
-        degree: 'B.Tech — Electronics Engineering',
-        specialization: 'Specialization: VLSI Design and Technology',
+        degree: 'B.E — Electronics Engineering (VLSI Design & Technology)',
+        specialization: 'Electronics Engineering (VLSI Design & Technology)',
         institution: 'Rajalakshmi Institute of Technology, Chennai',
         affiliation: 'Autonomous Institution',
-        grade: 'CGPA: 8.00',
+        grade: 'CGPA: 8.00/10',
         period: '2024 – 2028',
-        highlight: 'Focused on Digital Design, Physical Implementation & Semiconductor Technologies',
+        highlight: 'Focused on DFT, RTL Design, Physical Implementation & CMOS VLSI',
       },
       {
         degree: 'Higher Secondary Certificate (12th Standard)',
@@ -571,7 +582,7 @@ export const site = {
     href: 'mailto:giridharansenthil416@gmail.com',
     marquee: ['GIRIDHARAN S', 'VLSI ENGINEER', 'RTL TO OASIS', 'PHYSICAL DESIGN', 'SYNTHESIS & CTS'],
     links: [
-      { label: 'Resume ↓', href: '/resume/Giridharan_S_VLSI_Resume_v2.pdf' },
+      { label: 'Resume ↓', href: '/resume/Giridharan_S_VLSI_Resume_v3.pdf' },
       { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/giridharan-s-13672932b/' },
       { label: 'GitHub ↗', href: 'https://github.com/giridharansenthil416-png' },
       { label: 'Email', href: 'mailto:giridharansenthil416@gmail.com' },
