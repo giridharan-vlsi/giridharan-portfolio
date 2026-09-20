@@ -29,7 +29,7 @@ export const site = {
     'Seeking opportunities to contribute to VLSI and semiconductor engineering teams through internship roles across RTL Design, Physical Design, DFT, Verification, and related domains.',
 
   resumeUrl: '/resume/Giridharan_S_VLSI_Resume_v3.pdf',
-  githubUrl: 'https://github.com/giridharansenthil416-png',
+  githubUrl: 'https://github.com/giridharan-vlsi',
   linkedinUrl: 'https://www.linkedin.com/in/giridharan-s-13672932b/',
   contactEmail: 'giridharansenthil416@gmail.com',
   collegeEmail: 'giridharan.240034@vlsi.ritchennai.edu.in',
@@ -584,7 +584,7 @@ export const site = {
     links: [
       { label: 'Resume ↓', href: '/resume/Giridharan_S_VLSI_Resume_v3.pdf' },
       { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/giridharan-s-13672932b/' },
-      { label: 'GitHub ↗', href: 'https://github.com/giridharansenthil416-png' },
+      { label: 'GitHub ↗', href: 'https://github.com/giridharan-vlsi' },
       { label: 'Email', href: 'mailto:giridharansenthil416@gmail.com' },
       { label: 'Call (+91 9884778461)', href: 'tel:+919884778461' },
     ],
