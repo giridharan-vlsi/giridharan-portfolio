@@ -32,7 +32,7 @@ export const site = {
   githubUrl: 'https://github.com/giridharansenthil416-png',
   linkedinUrl: 'https://www.linkedin.com/in/giridharan-s-13672932b/',
   contactEmail: 'giridharansenthil416@gmail.com',
-  collegeEmail: 'GIRIDHARAN.240034@VLSI.RICHENNAI.EDU.IN',
+  collegeEmail: 'giridharan.240034@vlsi.ritchennai.edu.in',
   phone: '+91 9884778461',
   location: 'Chennai, Tamil Nadu, India',
 
